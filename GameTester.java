@@ -14,8 +14,6 @@ public class GameTester {
 	
 	public static void main(String [] args) throws IOException
 	{
-		System.out.println("Mission Marcus"); // my name is here.
-		System.out.println("NETID: mmarcu6"); // netid
 		Scanner scan = new Scanner(System.in);
 		String input = "";
 		Scanner fileScanner; // file scanner
