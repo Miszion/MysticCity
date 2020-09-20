@@ -27,7 +27,7 @@ public class GameTester {
 		try
 		{
 		input = scan.nextLine();
-		File fin = new File(input);
+		File fin = new File("maps/" + input);
 		
 		fileScanner = new Scanner(new FileInputStream(fin), "UTF-8");
 		
