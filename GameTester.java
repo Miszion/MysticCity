@@ -22,34 +22,31 @@ public class GameTester {
 		
 		System.out.println("Please enter in a file name");
 		
-		while (worked == false  && !input.toLowerCase().equals("quit") && !input.toLowerCase().equals("q") && !input.toLowerCase().equals("exit"))
-		{
-		try
-		{
-		input = scan.nextLine();
-		File fin = new File("maps/" + input);
-		
-		fileScanner = new Scanner(new FileInputStream(fin), "UTF-8");
-		
-		Game newGame = new Game(fileScanner);
-		worked = true;
-		newGame.play();
-		scan.close();
-		fileScanner.close();
-		}
-		catch(FileNotFoundException ex)
-		{
-			if (input.toLowerCase().equals("quit") || input.toLowerCase().equals("q") || input.toLowerCase().equals("exit"))
+		while (worked == false  && !input.toLowerCase().equals("quit") && !input.toLowerCase().equals("q") && !input.toLowerCase().equals("exit")){
+			try
 			{
-			worked = true;
+				input = scan.nextLine();
+				File fin = new File("maps/" + input);
+				
+				fileScanner = new Scanner(new FileInputStream(fin), "UTF-8");
+				
+				Game newGame = new Game(fileScanner);
+				worked = true;
+				newGame.play();
+				scan.close();
+				fileScanner.close();
 			}
-			else
+			catch(FileNotFoundException ex)
 			{
-				worked = false;
-				System.out.println("File was not found, Please enter a new filename");
+				if (input.toLowerCase().equals("quit") || input.toLowerCase().equals("q") || input.toLowerCase().equals("exit")){
+					worked = true;
+				}
+				else {
+					worked = false;
+					System.out.println("File was not found, Please enter a new filename");
+				}
+				
 			}
-			
-		}
 		}
 		
 		
